@@ -15,3 +15,8 @@ test("Simple click test", async ({page}) =>{
 });
 
 
+test.only("Duplicate Test", async ({page}) =>{
+    await page.goto("https://the-internet.herokuapp.com");
+    await page.click("text=Add/Remove Elements");
+    await page.click("text=Add Element");
+})
