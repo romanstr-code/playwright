@@ -7,7 +7,8 @@ test("First Test", async ({page}) =>{
     await expect(title).toHaveText('Playwright');
 });
 
-test.skip("Simple click test", async ({page}) =>{
+test("Simple click test", async ({page, browserName}) =>{
+    test.skip(browserName === 'firefox', 'Working on the firefox fix');
     await page.goto("https://the-internet.herokuapp.com");
     await page.locator("text=Add/Remove Elements").click();
     await page.pause();
